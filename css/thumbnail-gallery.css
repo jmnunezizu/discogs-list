@@ -1,0 +1,101 @@
+/*!
+ * Start Bootstrap - Thumbnail Gallery (https://startbootstrap.com/template-overviews/thumbnail-gallery)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-thumbnail-gallery/blob/master/LICENSE)
+ */
+
+/*body {
+  padding-top: 54px;
+}*/
+
+.rating {
+  /*unicode-bidi: bidi-override;
+  direction: rtl;*/
+  /*font-size: 30px;*/
+}
+
+.rating span.star {
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+}
+
+.rating span.star.solid:before {
+  content: "\f005";
+  color: #ffd700;
+}
+
+/*.rating span.star:hover {
+  cursor: pointer;
+}*/
+
+.rating span.star:before {
+  content: "\f006";
+  padding-right: 5px;
+  color: #999999;
+}
+
+/*.rating span.star:hover:before, .rating span.star:hover~span.star:before {
+  content: "\f005";
+  color: #ffd700;
+}*/
+
+/* bootstrap overrides */
+.img-thumbnail {
+  width: 100%;
+}
+
+.release {
+  margin-bottom: 10px;
+}
+
+.release a {
+  /*color: inherit;
+  text-decoration: inherit; */
+  margin-bottom: 0 !important;
+}
+
+.release-price {
+	/*font-size: 0.8em;*/
+  font-size: 1em;
+  text-align: right;
+  color: red;
+  font-weight: bold;
+  letter-spacing: -1px;
+  float: right;
+}
+
+.release-details {
+  border-top: 1px solid #ccc;
+  margin-top: 2px;
+  padding-top: 3px;
+}
+
+.release-details h6.release-title {
+  letter-spacing: -0.7px;
+  margin-bottom: 0;
+  /*font-size: 0.9em;*/
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.release-details .release-artist {
+  letter-spacing: -0.5px;
+  /*font-size: 0.8em;*/
+  font-size: 0.9em;
+  margin-bottom: 0;
+}
+
+.release-details .release-label {
+  /*font-size: 0.7em;*/
+  font-size: 0.8em;
+  letter-spacing: -0.5px;
+  margin-bottom: 0;
+}
+
+.release-details .release-genres {
+  font-size: 0.8em;
+  letter-spacing: -0.5px;
+  margin-bottom: 0; 
+}
