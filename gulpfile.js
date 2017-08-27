@@ -2,6 +2,12 @@ var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
 var pkg = require('./package.json');
 
+const mam = require('mock-api-middleware');
+
+const mockApi = mam('/api', {
+  mockPath: './mocks/'
+})
+
 // Copy vendor files from /node_modules into /vendor
 // NOTE: requires `npm install` before running!
 gulp.task('copy', function() {
@@ -36,6 +42,9 @@ gulp.task('browserSync', function() {
     server: {
       baseDir: ''
     },
+    middleware: [
+      mockApi
+    ]
   })
 })
 

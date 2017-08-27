@@ -46,6 +46,14 @@
   width: 100%;
 }
 
+/* release */
+
+.recommended {
+  color: red;
+  position: absolute;
+  left: 50%;
+}
+
 .release {
   margin-bottom: 10px;
 }
@@ -54,6 +62,10 @@
   /*color: inherit;
   text-decoration: inherit; */
   margin-bottom: 0 !important;
+}
+
+.release-header {
+  position: relative;
 }
 
 .release-price {

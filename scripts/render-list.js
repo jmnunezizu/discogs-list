@@ -6,10 +6,13 @@ function createReleaseContainer(release) {
     target: '_blank',
     'class': 'd-block mb-4' 
   });
-  link.append('<img class="img-fluid img-thumbnail" src="' + release.thumb + '" />');
+  release.images = release.images || [{uri: ''}];
+  link.append('<img class="img-fluid img-thumbnail" src="' + release.images[0].uri + '" />');
   releaseContainer.append(link);
 
-  // price + rating
+  //<i class="fa fa-heart" aria-hidden="true"></i>
+
+  // price + rating + recommended
   var matches = release.comment.match(/(\*){1,3}/g);
   var rarity = 0;
   if (matches !== null) {
@@ -27,7 +30,15 @@ function createReleaseContainer(release) {
     ratingEl.append(starEl);
   }
 
-  var headerEl = $('<div>').append(priceEl).append(ratingEl);
+  var headerEl = $('<div>', { 'class': 'release-header' }).append(priceEl).append(ratingEl);
+
+  // recommended
+  var isRecommended = release.comment.indexOf('Highlight') > 0;
+
+  if (isRecommended) {
+    headerEl.append($('<i>', { 'class': 'fa fa-heart recommended', 'aria-hidden': true }));
+  }
+
   releaseContainer.append(headerEl);
 
   // details
@@ -40,6 +51,22 @@ function createReleaseContainer(release) {
 
   return releaseContainer;
 }
+
+// $(document).ready(function () {
+//   var container = $('.container-fluid .row');
+
+//   $.ajax({
+//     url: '/api/lists/rare-groove'
+//   }).then(function (data) {
+//     var releaseElements = [];
+//     data.items.forEach(function (release) {
+//       var releaseEl = createReleaseContainer(release);
+//       releaseElements.push(releaseEl);
+//     });
+
+//     container.append(releaseElements);
+//   });
+// });
 
 var container = $('.container-fluid .row');
 
