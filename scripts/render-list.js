@@ -7,7 +7,11 @@ function createReleaseContainer(release) {
     'class': 'd-block mb-4' 
   });
   release.images = release.images || [{uri: ''}];
-  link.append('<img class="img-fluid img-thumbnail" src="' + release.images[0].uri + '" />');
+  link.append($('<img>', {
+    'class': 'img-fluid img-thumbnail img-zoom', 
+    src: release.images[0].uri
+  }));
+  // link.append('<img class="img-fluid img-thumbnail" src="' + release.images[0].uri + '" />');
   releaseContainer.append(link);
 
   //<i class="fa fa-heart" aria-hidden="true"></i>

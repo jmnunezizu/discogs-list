@@ -46,6 +46,26 @@
   width: 100%;
 }
 
+/* image zoom */
+
+img.img-zoom {
+  -webkit-transition: all .2s ease; /* Safari and Chrome */
+  -moz-transition: all .2s ease; /* Firefox */
+  -o-transition: all .2s ease; /* IE 9 */
+  -ms-transition: all .2s ease; /* Opera */
+  transition: all .2s ease;
+}
+
+img.img-zoom:hover {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform:translateZ(0) scale(1.10); /* Safari and Chrome */
+  -moz-transform:scale(1.10); /* Firefox */
+  -ms-transform:scale(1.10); /* IE 9 */
+  -o-transform:translatZ(0) scale(1.10); /* Opera */
+  transform:translatZ(0) scale(1.10);
+}
+
 /* release */
 
 .recommended {
