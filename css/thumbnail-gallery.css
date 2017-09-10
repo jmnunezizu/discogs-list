@@ -104,7 +104,7 @@ img.img-zoom:hover {
   padding-top: 3px;
 }
 
-.release-details h6.release-title {
+.release-details h6.release-artist {
   letter-spacing: -0.7px;
   margin-bottom: 0;
   /*font-size: 0.9em;*/
@@ -112,7 +112,7 @@ img.img-zoom:hover {
   font-weight: bold;
 }
 
-.release-details .release-artist {
+.release-details .release-title {
   letter-spacing: -0.5px;
   /*font-size: 0.8em;*/
   font-size: 0.9em;

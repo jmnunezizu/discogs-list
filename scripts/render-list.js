@@ -11,10 +11,7 @@ function createReleaseContainer(release) {
     'class': 'img-fluid img-thumbnail img-zoom', 
     src: release.images[0].uri
   }));
-  // link.append('<img class="img-fluid img-thumbnail" src="' + release.images[0].uri + '" />');
   releaseContainer.append(link);
-
-  //<i class="fa fa-heart" aria-hidden="true"></i>
 
   // price + rating + recommended
   var matches = release.comment.match(/(\*){1,3}/g);
@@ -47,8 +44,8 @@ function createReleaseContainer(release) {
 
   // details
   var releaseDetails = $('<div/>', { 'class': 'release-details'});
-  releaseDetails.append($('<h6>', { 'class': 'release-title' }).text(release.title));
-  releaseDetails.append($('<p>', { 'class': 'release-artist' }).text(release.artist));
+  releaseDetails.append($('<h6>', { 'class': 'release-artist' }).text(release.artist));
+  releaseDetails.append($('<p>', { 'class': 'release-title' }).text(release.title));
   releaseDetails.append($('<p>', { 'class': 'release-label' }).text(release.year + ' / ' + release.label.name + ' / ' + release.label.catno));
   releaseDetails.append($('<p>', { 'class': 'release-genres'}).text(release.genres.join(' / ')));
   releaseContainer.append(releaseDetails);
