@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Rare Groove A to Z</title>
+    <title>Discogs List</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
@@ -22,9 +22,9 @@
   <body>
 
     <!-- Navigation -->
-    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="#">Start Bootstrap</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Discogs List</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -36,23 +36,29 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link" href="http://localhost:3000/?name=rare-groove">Rare Groove A to Z</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Services</a>
+              <a class="nav-link" href="http://localhost:3000/?name=japan-2017-wantlist&sort=true">Japan 2017 Wantlist</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
+              <a class="nav-link" href="http://localhost:3000/?name=creation&sort=true">Creation Records</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="http://localhost:3000/?name=music-matters&sort=true">Music Matters</a>
             </li>
           </ul>
         </div>
       </div>
-    </nav> -->
+    </nav>
 
     <!-- Page Content -->
     <div class="container-fluid">
 
-      <h1 class="my-4 text-center text-lg-left">Rare Groove A to Z</h1>
+      <h1 class= my-4 text-center text-lg-left">
+        <span class="list-name">Loading...</span>
+        <span class="list-total"></span>
+      </h1>
       <div class="row"></div>
 
     </div>
@@ -70,7 +76,7 @@
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/popper/popper.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="scripts/rare-groove.js"></script>
+    <script src="scripts/music-matters.js"></script>
     <script src="scripts/render-list.js"></script>
 
   </body>

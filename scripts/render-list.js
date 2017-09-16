@@ -53,28 +53,43 @@ function createReleaseContainer(release) {
   return releaseContainer;
 }
 
-// $(document).ready(function () {
-//   var container = $('.container-fluid .row');
+$(document).ready(function () {
+  var container = $('.container-fluid .row');
 
-//   $.ajax({
-//     url: '/api/lists/rare-groove'
-//   }).then(function (data) {
-//     var releaseElements = [];
-//     data.items.forEach(function (release) {
-//       var releaseEl = createReleaseContainer(release);
-//       releaseElements.push(releaseEl);
-//     });
+  var urlParams = new URLSearchParams(window.location.search);
+  var url = '/api/lists/' + (urlParams.get('name') || 'rare-groove');
+  var shouldSort = urlParams.get('sort') || false;
 
-//     container.append(releaseElements);
-//   });
-// });
+  $.ajax({
+    url: url,
+    statusCode: {
+      404: function () {
+        $('.list-name').text('Unknown list ' + urlParams.get('name'));    
+      }
+    }
+  }).then(function (data) {
+    $('title').text(data.name);
+    $('.list-name').text(data.name);
+    $('.list-total').text('(' + data.items.length + ')');
 
-var container = $('.container-fluid .row');
+    var items = data.items;
 
-var releaseElements = [];
-rareGroove.items.forEach(function (release) {
-  var releaseEl = createReleaseContainer(release);
-  releaseElements.push(releaseEl);
+    if (shouldSort) {
+      items = data.items.sort(function (a, b) { 
+        var aJoined = a.artist + a.year + a.title;
+        var bJoined = b.artist + b.year + b.title;
+        if (aJoined < bJoined) return -1;
+        if (aJoined > bJoined) return 1;
+        return 0;
+      });
+    }
+    
+    var releaseElements = [];
+    items.forEach(function (release) {
+      var releaseEl = createReleaseContainer(release);
+      releaseElements.push(releaseEl);
+    });
+
+    container.append(releaseElements);
+  });
 });
-
-container.append(releaseElements);
